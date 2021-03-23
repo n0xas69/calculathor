@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+  <p class="text-center h2 font-italic" style="margin-top: 10%;">
+    Vous voulez devenir aussi fort et affiné que Thor ? Tout commence par une bonne alimentation ! <br>
+    Ce générateur vous donnera les macronutriments dont vous avez besoin pour atteindre vos objectifs.
+  </p><br><br>
+    <form action="result" method="post">
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Vous êtes :</label>
+          <select class="form-control" id="exampleFormControlSelect1" name="sex">
+            <option>Un homme</option>
+            <option>Une femme</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label for="formGroupExampleInput">Votre poids (en kg):</label>
+            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="ex : 80" name="poids" required="True">
+            {% if error == "poids" %}
+            <p class="text-warning">Rentrer un poids humain.</p>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="formGroupExampleInput">Votre taille (en cm) :</label>
+            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="ex : 180 pour 1M80" name="taille" required="True">
+            {% if error == "taille" %}
+            <p class="text-warning">Rentrer une taille humaine.</p>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="formGroupExampleInput">Votre age :</label>
+            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="ex : 20" name="age" required="True">
+            {% if error == "age" %}
+            <p class="text-warning">Il n'y a que les dieux qui vivent aussi longtemps.</p>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Vous faites du sport :</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="ta">
+              <option>1 fois par semaine ou moins</option>
+              <option>2 à 3 fois par semaine</option>
+              <option>4 fois par semaine</option>
+              <option>5 fois ou plus par semaine</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Dans la vie de tous les jours :</label>
+          <select class="form-control" id="exampleFormControlSelect1" name="actif">
+            <option>Vous avez un travail sédentaire</option>
+            <option>Vous avez un travail physique</option>
+          </select>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Vous prenez du poids plutôt :</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="morpho">
+          <option>Facilement</option>
+          <option>Difficilement</option>
+        </select>
+      </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Votre objectif :</label>
+          <select class="form-control" id="exampleFormControlSelect1" name="objectif">
+            <option>Prise de masse</option>
+            <option>Perte de poids</option>
+          </select>
+        </div>
+
+        
+
+        <button type="submit" class="btn btn-primary">Calculer !</button>
+      </form>
+</div>
+
+{% endblock content %}

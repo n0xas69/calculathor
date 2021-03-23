@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2 class="text-center" style="margin-top: 10%;">Vous devez manger <strong>{{calorie}}</strong> calories par jour</h2>
+<div class="text-center">
+    <h3>Répartition des macros nutriments :</h3><br>
+<ul class="h4">
+    <li>Glucide : <strong>{{ maccro[0] }}</strong> gr</li>
+    <li>Protéine : <strong>{{ maccro[1] }}</strong> gr</li>
+    <li>Lipide : <strong>{{ maccro[2] }}</strong> gr</li>
+</ul><br><br>
+</div>
+
+{% if objectif == "Perte de poids" %}
+<p class="text-center font-italic">
+    Il est important de garder un taux calorique proche de la normale lors d'une perte de poids.
+    Le but ici est de perdre de la masse graisseuse et avoir un gain musculaire.
+    Il ne faut donc surtout pas négliger les glucides, et ne surtout pas faire de régime à 1000 calories
+    sous peine de reprendre beaucoup de poids une fois votre "régime" terminé.
+</p>
+{% endif %}
+
+{% if objectif == "Prise de masse" %}
+<p class="text-center font-italic">
+    Une bonne prise de masse n'est pas une prise de graisse, mais de muscle.
+    Il font donc consommer plus de glucide et de lipide mais attention au sucre et au mauvaises graisses !
+</p>
+{% endif %}
+
+{% endblock content %}
